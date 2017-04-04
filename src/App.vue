@@ -1,13 +1,20 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <button @click="movePage('/')">热映</button>
+    <button @click="movePage('/find')">发现</button>
+    <button @click="movePage('/my')">我的</button>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  methods: {
+    movePage: function (route) {
+      this.$router.push(route)
+    }
+  }
 }
 </script>
 

@@ -1,7 +1,8 @@
 <template>
-  <div class="being-relesed">
+  <div class="future-relesed">
     <p>正在上映</p>
-    <ul>
+    <p v-if="movieData.length===0">正在加载中...</p>
+    <ul v-else>
       <li v-for="item in movieData">
         {{item.title}}
       </li>
@@ -11,7 +12,7 @@
 <script>
   import axios from 'axios'
   export default {
-    name: 'being-relesed',
+    name: 'future-relesed',
     data: function () {
       return {
         movieData: []
@@ -24,7 +25,7 @@
       getMovie: function () {
         axios({
           method: 'GET',
-          url: '/api/movie/in_theaters'
+          url: '/api/movie/coming_soon'
         }).then((response) => {
           this.movieData = response.data.subjects
         }).catch((error) => {

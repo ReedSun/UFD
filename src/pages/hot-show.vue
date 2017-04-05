@@ -9,8 +9,8 @@
   </div>
 </template>
 <script>
-  import beingRelesed from '@/components/being-relesed'
-  import futureRelesed from '@/components/future-relesed'
+  import beingRelesed from '@/components/hot-show/being-relesed'
+  import futureRelesed from '@/components/hot-show/future-relesed'
   export default {
     name: 'hotShow',
     data: function () {

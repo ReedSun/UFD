@@ -1,15 +1,31 @@
 <template>
   <div id="app">
-    <button @click="movePage('/')">热映</button>
-    <button @click="movePage('/find')">发现</button>
-    <button @click="movePage('/my')">我的</button>
     <router-view></router-view>
+    <mt-tabbar fixed  v-model="selected">
+      <mt-tab-item id="热映" @click.native="movePage('/')">
+        <img slot="icon" src="">
+        热映
+      </mt-tab-item>
+      <mt-tab-item id="发现" @click.native="movePage('/find')">
+        <img slot="icon" src="">
+        发现
+      </mt-tab-item>
+      <mt-tab-item id="我的" @click.native="movePage('/my')">
+        <img slot="icon" src="">
+        我的
+      </mt-tab-item>
+    </mt-tabbar>
   </div>
 </template>
 
 <script>
 export default {
   name: 'app',
+  data: function () {
+    return {
+      selected: '热映'
+    }
+  },
   methods: {
     movePage: function (route) {
       this.$router.push(route)

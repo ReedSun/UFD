@@ -1,0 +1,99 @@
+<template>
+  <div class="movie-cell">
+    <div class="pic">
+      <img :src="data.images.medium">
+    </div>
+    <div class="main">
+      <h1>{{data.title}}</h1>
+      <div class=""info>
+        <p>类型：{{data.genres | movieClass}}</p>
+        <p>导演：{{data.directors | moviePeople}}</p>
+        <p>主演：{{data.casts | moviePeople}}</p>
+        <P v-if="data.year != (new Date()).getFullYear()">上映年份：{{data.year}}</p>
+      </div>
+      <div class="check">查电影票</div>
+    </div>
+    <div class="rating">{{data.rating.average | dealRate}}</div>
+  </div>
+</template>
+<script>
+  export default {
+    name: 'movie-cell',
+    props: ['data'],
+    filters: {
+      moviePeople: function (arr) {
+        let result = ''
+        for (var item in arr) {
+          result += arr[item].name + ' / '
+        }
+        return result.substring(0, result.length - 2)
+      },
+      movieClass: function (arr) {
+        let result = ''
+        for (var item in arr) {
+          result += arr[item] + ' / '
+        }
+        return result.substring(0, result.length - 2)
+      },
+      dealRate: function (num) {
+        if (num === 0) {
+          return '暂无'
+        } else {
+          return num
+        }
+      }
+    }
+  }
+</script>
+<style lang="scss" scoped>
+  .movie-cell {
+    height: 147px;
+    padding: 10px;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    .pic {
+      img {
+        width: 100px;
+      }
+    }
+    .main {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      flex-grow: 1;
+      text-align: left;
+      padding: 0 10px;
+      height: 100%;
+      h1 {
+        font-size: 16px;
+        text-align: center;
+        margin: 0;
+      }
+      p {
+        font-size: 10px;
+        color: #666;
+        margin: 0;
+      }
+      .check {
+        text-align: center;
+        border: 1px solid rgb(252,157,154);
+        border-radius: 6px;
+        height: 30px;
+        line-height: 30px;
+        color: rgb(252,157,154);
+      }
+      .check:active {
+        background: rgb(252,157,154);
+        color: #fff;
+      }
+    }
+    .rating {
+      color: rgb(254,67,101);
+      align-self: center;
+      font-size: 26px;
+      flex-shrink: 0;
+    }
+  }
+</style>
+

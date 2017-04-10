@@ -1,21 +1,22 @@
 <template>
   <div class="hot-show">
-    <mt-navbar class="page-part" v-model="selected">
+    <mt-navbar class="page-part" v-model="selected" fixed>
       <mt-tab-item id="1">正在热映</mt-tab-item>
       <mt-tab-item id="2">即将上映</mt-tab-item>
     </mt-navbar>
-    <mt-tab-container v-model="selected">
+    <mt-tab-container class="main" v-model="selected" swipeable>
       <mt-tab-container-item id="1">
-        <mt-cell v-for="item in movieData.in_theaters" :title="item.title"></mt-cell>
+        <movie-cell v-for="item in movieData.in_theaters" :data="item"></movie-cell>
       </mt-tab-container-item>
       <mt-tab-container-item id="2">
-        <mt-cell v-for="item in movieData.coming_soon" :title="item.title"></mt-cell>
+        <movie-cell v-for="item in movieData.coming_soon" :data="item"></movie-cell>
       </mt-tab-container-item>
     </mt-tab-container>
   </div>
 </template>
 <script>
   import axios from 'axios'
+  import movieCell from '@/components/movie-cell'
   export default {
     name: 'hotShow',
     data: function () {
@@ -27,6 +28,9 @@
           coming_soon: []
         }
       }
+    },
+    components: {
+      'movie-cell': movieCell
     },
     created: function () {
       this.getMoive('/api/movie/in_theaters', 'in_theaters')
@@ -41,6 +45,7 @@
           url: url
         }).then((response) => {
           this.movieData[dataLocation] = response.data.subjects
+          console.log(response)
         }).catch((error) => {
           console.log(error)
         })
@@ -48,3 +53,11 @@
     }
   }
 </script>
+<style lang="scss" scoped>
+  .hot-show {
+    padding-bottom: 55px;
+  }
+  .main {
+    padding-top: 49px;
+  }
+</style>

@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <keep-alive>
+      <router-view></router-view>      
+    </keep-alive>
     <mt-tabbar fixed  v-model="selected">
       <mt-tab-item id="热映" @click.native="movePage('/')">
         <img slot="icon" src="">

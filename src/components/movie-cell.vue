@@ -1,7 +1,7 @@
 <template>
   <div class="movie-cell">
     <div class="pic">
-      <img :src="data.images.medium">
+      <img v-lazy="data.images.medium">
     </div>
     <div class="main">
       <h1>{{data.title}}</h1>

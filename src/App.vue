@@ -8,9 +8,9 @@
         <img slot="icon" src="">
         热映
       </mt-tab-item>
-      <mt-tab-item id="发现" @click.native="movePage('/find')">
+      <mt-tab-item id="TOP250" @click.native="movePage('/find')">
         <img slot="icon" src="">
-        发现
+        TOP250
       </mt-tab-item>
       <mt-tab-item id="我的" @click.native="movePage('/my')">
         <img slot="icon" src="">

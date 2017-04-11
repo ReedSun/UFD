@@ -21,7 +21,6 @@
     name: 'hotShow',
     data: function () {
       return {
-        show: 'now',
         selected: '1',
         movieData: {
           in_theaters: [],

@@ -6,10 +6,10 @@
     </mt-navbar>
     <mt-tab-container class="main" v-model="selected" swipeable>
       <mt-tab-container-item id="1">
-        <movie-cell v-for="item in movieData.in_theaters" :data="item"></movie-cell>
+        <movie-cell v-for="item in movieData.in_theaters" :data="item" :key="item.id"></movie-cell>
       </mt-tab-container-item>
       <mt-tab-container-item id="2">
-        <movie-cell v-for="item in movieData.coming_soon" :data="item"></movie-cell>
+        <movie-cell v-for="item in movieData.coming_soon" :data="item" :key="item.id"></movie-cell>
       </mt-tab-container-item>
     </mt-tab-container>
   </div>

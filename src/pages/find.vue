@@ -9,19 +9,19 @@
     </mt-navbar>
     <mt-tab-container class="main" v-model="selected" swipeable>
       <mt-tab-container-item id="first">
-        <movie-cell v-for="item in movieData.first.data" :data="item"></movie-cell>
+        <movie-cell v-for="item in movieData.first.data" :data="item" :key="item.id"></movie-cell>
       </mt-tab-container-item>
       <mt-tab-container-item id="second">
-        <movie-cell v-for="item in movieData.second.data" :data="item"></movie-cell>
+        <movie-cell v-for="item in movieData.second.data" :data="item" :key="item.id"></movie-cell>
       </mt-tab-container-item>
       <mt-tab-container-item id="third">
-        <movie-cell v-for="item in movieData.third.data" :data="item"></movie-cell>
+        <movie-cell v-for="item in movieData.third.data" :data="item" :key="item.id"></movie-cell>
       </mt-tab-container-item>
       <mt-tab-container-item id="fourth">
-        <movie-cell v-for="item in movieData.fourth.data" :data="item"></movie-cell>
+        <movie-cell v-for="item in movieData.fourth.data" :data="item" :key="item.id"></movie-cell>
       </mt-tab-container-item>
       <mt-tab-container-item id="fifth">
-        <movie-cell v-for="item in movieData.fifth.data" :data="item"></movie-cell>
+        <movie-cell v-for="item in movieData.fifth.data" :data="item" :key="item.id"></movie-cell>
       </mt-tab-container-item>
     </mt-tab-container>
   </div>

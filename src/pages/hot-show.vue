@@ -12,6 +12,20 @@
         <movie-cell v-for="item in movieData.coming_soon" :data="item" :key="item.id"></movie-cell>
       </mt-tab-container-item>
     </mt-tab-container>
+    <mt-tabbar fixed value="热映">
+      <mt-tab-item id="热映">
+        <img slot="icon" src="">
+        热映
+      </mt-tab-item>
+      <mt-tab-item id="TOP250" @click.native="movePage('/find')">
+        <img slot="icon" src="">
+        TOP250
+      </mt-tab-item>
+      <mt-tab-item id="我的" @click.native="movePage('/my')">
+        <img slot="icon" src="">
+        我的
+      </mt-tab-item>
+    </mt-tabbar>
   </div>
 </template>
 <script>
@@ -45,6 +59,9 @@
         }).then((response) => {
           this.movieData[dataLocation] = response.data.subjects
         })
+      },
+      movePage: function (route) {
+        this.$router.push(route)
       }
     }
   }

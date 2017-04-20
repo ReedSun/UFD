@@ -83,12 +83,12 @@
     watch: {
       selected: function (val, oldval) {
         if (!this.movieData[val].load) {
-          this.getMoive((this.movieData[val].id * 50) + 1, val)
+          this.getMoive((this.movieData[val].id * 50), val)
         }
       }
     },
     created: function () {
-      this.getMoive(1, 'first')
+      this.getMoive(0, 'first')
     },
     methods: {
       getMoive: function (start, dataLocation) {

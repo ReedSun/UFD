@@ -88,8 +88,6 @@
         }).then((response) => {
           this.movieData[dataLocation].data = response.data.subjects
           this.movieData[dataLocation].load = true
-        }).catch((error) => {
-          console.log(error)
         })
       }
     }

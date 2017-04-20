@@ -44,8 +44,6 @@
           url: url
         }).then((response) => {
           this.movieData[dataLocation] = response.data.subjects
-        }).catch((error) => {
-          console.log(error)
         })
       }
     }

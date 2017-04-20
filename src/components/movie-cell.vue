@@ -11,7 +11,7 @@
         <p>主演：{{data.casts | moviePeople}}</p>
         <P v-if="data.year != (new Date()).getFullYear()">上映年份：{{data.year}}</p>
       </div>
-      <div class="check">查电影票</div>
+      <div class="check" @click="goWatchDetail(data.id)">查看详情</div>
     </div>
     <div class="rating">{{data.rating.average | dealRate}}</div>
   </div>
@@ -41,6 +41,11 @@
         } else {
           return num
         }
+      }
+    },
+    methods: {
+      goWatchDetail: function (id) {
+        this.$router.push('/item/' + id)
       }
     }
   }

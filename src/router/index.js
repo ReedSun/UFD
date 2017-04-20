@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import hotShow from '@/pages/hot-show'
 import find from '@/pages/find'
 import my from '@/pages/my'
+import movieDetail from '@/pages/movie-detail'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/my',
       name: 'my',
       component: my
+    },
+    {
+      path: '/item/:id',
+      name: 'movie-detail',
+      component: movieDetail
     }
   ]
 })

@@ -1,9 +1,6 @@
 <template>
   <div class="moive-detail">
-    <div class="header">
-      <p class="header-title">电影</p>
-      <img class="header-pic" :src="data.images.large">
-    </div>
+    <movie-detail-header :img="data.images.large"></movie-detail-header>
     <div class="movie-intr-wrapper">
       <div class="movie-intr">
         <h1>{{data.title}}</h1>
@@ -32,8 +29,12 @@
 </template>
 <script>
   import axios from 'axios'
+  import movieDetailHeader from '@/components/movie-detail-header'
   export default {
     name: 'movie-detail',
+    components: {
+      movieDetailHeader
+    },
     data: function () {
       return {
         data: {}
@@ -60,19 +61,6 @@
   }
 </script>
 <style>
-  .header {
-    background-color: #232323;
-    padding-top: 15px;
-    padding-bottom: 20px;
-  }
-  .header-title {
-    color: #FFF;
-    margin-bottom: 20px;
-    font-size: 16px;
-  }
-  .header-pic {
-    height: 300px;
-  }
   .movie-intr-wrapper {
     position: relative;
     padding: 20px;

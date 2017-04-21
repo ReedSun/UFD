@@ -51,11 +51,11 @@
         require: true
       },
       rate: {
-        type: String,
+        type: [String, Number],
         require: true
       },
       ratePeople: {
-        type: String,
+        type: [String, Number],
         require: true
       }
     }

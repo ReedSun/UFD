@@ -18,6 +18,7 @@
 </script>
 <style scoped>
   .header {
+    margin-top: 40px;
     background-color: #232323;
     padding-top: 20px;
     padding-bottom: 20px;

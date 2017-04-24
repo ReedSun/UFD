@@ -43,6 +43,7 @@
 <script>
   import movieCell from '@/components/movie-cell'
   import axios from 'axios'
+  import { Tabbar, TabItem, Navbar, TabContainer, TabContainerItem } from 'mint-ui'
   export default {
     name: 'find',
     data: function () {
@@ -78,7 +79,12 @@
       }
     },
     components: {
-      'movie-cell': movieCell
+      'movie-cell': movieCell,
+      'mtTabItem': TabItem,
+      'mtTabbar': Tabbar,
+      'mtNavbar': Navbar,
+      'mtTabContainer': TabContainer,
+      'mtTabContainerItem': TabContainerItem
     },
     watch: {
       selected: function (val, oldval) {

@@ -18,12 +18,17 @@
   </div>
 </template>
 <script>
+  import { Tabbar, TabItem } from 'mint-ui'
   export default {
     name: 'my',
     data: function () {
       return {
         selectedForBottomBar: '我的'
       }
+    },
+    components: {
+      'mtTabItem': TabItem,
+      'mtTabbar': Tabbar
     },
     methods: {
       movePage: function (route) {

@@ -31,6 +31,7 @@
 <script>
   import axios from 'axios'
   import movieCell from '@/components/movie-cell'
+  import { Tabbar, TabItem, Navbar, TabContainer, TabContainerItem } from 'mint-ui'
   export default {
     name: 'hotShow',
     data: function () {
@@ -43,7 +44,12 @@
       }
     },
     components: {
-      'movie-cell': movieCell
+      'movie-cell': movieCell,
+      'mtTabItem': TabItem,
+      'mtTabbar': Tabbar,
+      'mtNavbar': Navbar,
+      'mtTabContainer': TabContainer,
+      'mtTabContainerItem': TabContainerItem
     },
     created: function () {
       this.getMoive('/api/movie/in_theaters', 'in_theaters')

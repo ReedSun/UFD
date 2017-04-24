@@ -17,6 +17,9 @@
   </div>
 </template>
 <script>
+  import { Lazyload } from 'mint-ui'
+  import Vue from 'vue'
+  Vue.use(Lazyload)
   export default {
     name: 'movie-cell',
     props: ['data'],

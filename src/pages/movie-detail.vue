@@ -1,9 +1,9 @@
 <template>
   <div class="moive-detail">
     <mt-header class="header" title="电影" fixed>
-      <router-link to="/" slot="left">
+      <div @click="back" slot="left">
         <mt-button icon="back">返回</mt-button>
-      </router-link>
+      </div>
     </mt-header>
     <movie-detail-header :img="data.images.large"></movie-detail-header>
     <movie-detail-message :title="data.title" :year="data.year" :originalTitle="data.original_title" :genres="data.genres" :aka="data.aka" :countries="data.countries" :rate="data.rating.average" :ratePeople="data.ratings_count"></movie-detail-message>
@@ -49,6 +49,9 @@
         }).then((response) => {
           this.data = response.data
         })
+      },
+      back: function () {
+        this.$router.go(-1)
       }
     }
   }

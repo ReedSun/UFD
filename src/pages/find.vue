@@ -43,7 +43,7 @@
 <script>
   import movieCell from '@/components/movie-cell'
   import axios from 'axios'
-  import { Tabbar, TabItem, Navbar, TabContainer, TabContainerItem } from 'mint-ui'
+  import { Tabbar, TabItem, Navbar, TabContainer, TabContainerItem, Indicator } from 'mint-ui'
   export default {
     name: 'find',
     data: function () {
@@ -90,6 +90,8 @@
       selected: function (val, oldval) {
         if (!this.movieData[val].load) {
           this.getMoive((this.movieData[val].id * 50), val)
+        } else {
+          Indicator.close()
         }
       }
     },
@@ -98,6 +100,7 @@
     },
     methods: {
       getMoive: function (start, dataLocation) {
+        Indicator.open()
         axios({
           method: 'GET',
           url: '/api/movie/top250',
@@ -108,6 +111,7 @@
         }).then((response) => {
           this.movieData[dataLocation].data = response.data.subjects
           this.movieData[dataLocation].load = true
+          Indicator.close()
         })
       },
       movePage: function (route) {

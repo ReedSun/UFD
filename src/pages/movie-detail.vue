@@ -17,7 +17,7 @@
   import movieDetailMessage from '@/components/movie-detail-message'
   import movieDetailSummary from '@/components/movie-detail-summary'
   import movieDetailPeople from '@/components/movie-detail-people'
-  import { Header, Button } from 'mint-ui'
+  import { Header, Button, Indicator } from 'mint-ui'
   export default {
     name: 'movie-detail',
     components: {
@@ -51,11 +51,13 @@
     },
     methods: {
       getData: function () {
+        Indicator.open()
         axios({
           methods: 'GET',
           url: '/api/movie/subject/' + this.$route.params.id
         }).then((response) => {
           this.data = response.data
+          Indicator.close()
         })
       },
       back: function () {

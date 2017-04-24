@@ -1,8 +1,8 @@
 <template>
   <div class="hot-show">
     <mt-navbar class="page-part" v-model="selected" fixed>
-      <mt-tab-item id="1">正在热映</mt-tab-item>
-      <mt-tab-item id="2">即将上映</mt-tab-item>
+      <mt-tab-item id="1" @click.native="getMoive('/api/movie/in_theaters', 'in_theaters')">正在热映</mt-tab-item>
+      <mt-tab-item id="2" @click.native="getMoive('/api/movie/coming_soon', 'coming_soon')">即将上映</mt-tab-item>
     </mt-navbar>
     <mt-tab-container class="main" v-model="selected" swipeable>
       <mt-tab-container-item id="1">
@@ -31,7 +31,7 @@
 <script>
   import axios from 'axios'
   import movieCell from '@/components/movie-cell'
-  import { Tabbar, TabItem, Navbar, TabContainer, TabContainerItem } from 'mint-ui'
+  import { Tabbar, TabItem, Navbar, TabContainer, TabContainerItem, Indicator } from 'mint-ui'
   export default {
     name: 'hotShow',
     data: function () {
@@ -54,16 +54,19 @@
     created: function () {
       this.getMoive('/api/movie/in_theaters', 'in_theaters')
     },
-    mounted: function () {
-      this.getMoive('/api/movie/coming_soon', 'coming_soon')
-    },
     methods: {
       getMoive: function (url, dataLocation) {
+        Indicator.close()
+        if (this.movieData[dataLocation].length) {
+          return
+        }
+        Indicator.open()
         axios({
           method: 'GET',
           url: url
         }).then((response) => {
           this.movieData[dataLocation] = response.data.subjects
+          Indicator.close()
         })
       },
       movePage: function (route) {

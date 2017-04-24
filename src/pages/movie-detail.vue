@@ -3,6 +3,7 @@
     <movie-detail-header :img="data.images.large"></movie-detail-header>
     <movie-detail-message :title="data.title" :year="data.year" :originalTitle="data.original_title" :genres="data.genres" :aka="data.aka" :countries="data.countries" :rate="data.rating.average" :ratePeople="data.ratings_count"></movie-detail-message>
     <movie-detail-summary :summary="movieSummaryArr"></movie-detail-summary>
+    <movie-detail-people :directors="data.directors" :casts="data.casts"></movie-detail-people>
   </div>
 </template>
 <script>
@@ -10,12 +11,14 @@
   import movieDetailHeader from '@/components/movie-detail-header'
   import movieDetailMessage from '@/components/movie-detail-message'
   import movieDetailSummary from '@/components/movie-detail-summary'
+  import movieDetailPeople from '@/components/movie-detail-people'
   export default {
     name: 'movie-detail',
     components: {
       movieDetailHeader,
       movieDetailMessage,
-      movieDetailSummary
+      movieDetailSummary,
+      movieDetailPeople
     },
     data: function () {
       return {

@@ -17,7 +17,7 @@
     }
   }
 </script>
-<style>
+<style scoped>
   .movie-summary {
     padding: 20px;
     text-align: left;
@@ -29,7 +29,7 @@
   }
   .movie-summary-main {
     font-size: 14px;
-    color: #232323;
+    color: #333;
     line-height: 1.35em;
     letter-spacing: 1px;
     margin-bottom: 15px;

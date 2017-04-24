@@ -16,7 +16,7 @@
     }
   }
 </script>
-<style>
+<style scoped>
   .header {
     background-color: #232323;
     padding-top: 20px;

@@ -11,7 +11,7 @@
         <p>主演：{{data.casts | moviePeople}}</p>
         <P v-if="data.year != (new Date()).getFullYear()">上映年份：{{data.year}}</p>
       </div>
-      <div class="check" @click="goWatchDetail(data.id)">查看详情</div>
+      <router-link class="check" :to="'/item/' + data.id">查看详情</router-link>
     </div>
     <div class="rating">{{data.rating.average | dealRate}}</div>
   </div>
@@ -87,6 +87,7 @@
         height: 30px;
         line-height: 30px;
         color: rgb(252,157,154);
+        text-decoration: none;
       }
       .check:active {
         background: rgb(252,157,154);

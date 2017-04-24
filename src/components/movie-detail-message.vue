@@ -61,7 +61,7 @@
     }
   }
 </script>
-<style>
+<style scoped>
   .movie-intr-wrapper {
     position: relative;
     padding: 20px;

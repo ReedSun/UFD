@@ -12,22 +12,34 @@ export default new Router({
     {
       path: '/',
       name: 'hot-show',
-      component: hotShow
+      component: hotShow,
+      meta: {
+        keepAlive: true
+      }
     },
     {
       path: '/find',
       name: 'find',
-      component: find
+      component: find,
+      meta: {
+        keepAlive: true
+      }
     },
     {
       path: '/my',
       name: 'my',
-      component: my
+      component: my,
+      meta: {
+        keepAlive: true
+      }
     },
     {
       path: '/item/:id',
       name: 'movie-detail',
-      component: movieDetail
+      component: movieDetail,
+      meta: {
+        keepAlive: false
+      }
     }
   ]
 })

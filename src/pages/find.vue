@@ -1,3 +1,9 @@
+<!--/*
+ * @Author: ReedSun
+ * @Date: 2017-04-04 10:18:17
+ * @Last Modified by: ReedSun
+ * @Last Modified time: 2017-04-25 22:34:23
+ */-->
 <template>
   <div class="find">
     <mt-navbar class="page-part" v-model="selected" fixed>
@@ -26,15 +32,15 @@
     </mt-tab-container>
     <mt-tabbar fixed value="TOP250">
       <mt-tab-item id="热映" @click.native="movePage('/')">
-        <img slot="icon" src="">
+        <icon name="ticket" slot="icon"></icon>
         热映
       </mt-tab-item>
       <mt-tab-item id="TOP250">
-        <img slot="icon" src="">
+        <icon name="eye" slot="icon"></icon>
         TOP250
       </mt-tab-item>
       <mt-tab-item id="我的" @click.native="movePage('/my')">
-        <img slot="icon" src="">
+        <icon name="user-o" slot="icon"></icon>
         我的
       </mt-tab-item>
     </mt-tabbar>
@@ -43,6 +49,10 @@
 <script>
   import movieCell from '@/components/movie-cell'
   import axios from 'axios'
+  import 'vue-awesome/icons/ticket'
+  import 'vue-awesome/icons/eye'
+  import 'vue-awesome/icons/user-o'
+  import Icon from 'vue-awesome/components/Icon'
   import { Tabbar, TabItem, Navbar, TabContainer, TabContainerItem, Indicator } from 'mint-ui'
   export default {
     name: 'find',
@@ -84,7 +94,8 @@
       'mtTabbar': Tabbar,
       'mtNavbar': Navbar,
       'mtTabContainer': TabContainer,
-      'mtTabContainerItem': TabContainerItem
+      'mtTabContainerItem': TabContainerItem,
+      'icon': Icon
     },
     watch: {
       selected: function (val, oldval) {

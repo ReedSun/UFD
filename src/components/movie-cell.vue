@@ -1,3 +1,9 @@
+<!--/*
+ * @Author: ReedSun
+ * @Date: 2017-04-10 20:59:16
+ * @Last Modified by:ReedSun
+ * @Last Modified time: 2017-04-25 22:34:23
+ */-->
 <template>
   <div class="movie-cell">
     <div class="pic">

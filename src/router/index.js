@@ -1,3 +1,9 @@
+/*
+ * @Author: ReedSun
+ * @Date: 2017-04-04 09:48:37
+ * @Last Modified by: ReedSun
+ * @Last Modified time: 2017-04-25 22:24:50
+ */
 import Vue from 'vue'
 import Router from 'vue-router'
 import hotShow from '@/pages/hot-show'

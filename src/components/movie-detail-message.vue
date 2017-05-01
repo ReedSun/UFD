@@ -22,13 +22,14 @@
         </p>
       </div>
       <div class="movie-rate">
-        <h1>{{rate}}</h1>
+        <h1>{{rate | dealRate}}</h1>
         <p>{{ratePeople}}人</p>
       </div>    
     </div>
   </div>
 </template>
 <script>
+  import dealRate from '@/filters/dealrate'
   export default {
     name: 'movie-detail-message',
     props: {
@@ -64,6 +65,9 @@
         type: [String, Number],
         require: true
       }
+    },
+    filters: {
+      dealRate
     }
   }
 </script>

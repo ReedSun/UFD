@@ -25,6 +25,7 @@
 <script>
   import { Lazyload } from 'mint-ui'
   import Vue from 'vue'
+  import dealRate from '@/filters/dealrate'
   Vue.use(Lazyload)
   export default {
     name: 'movie-cell',
@@ -44,13 +45,7 @@
         }
         return result.substring(0, result.length - 2)
       },
-      dealRate: function (num) {
-        if (num === 0) {
-          return '暂无'
-        } else {
-          return num
-        }
-      }
+      dealRate
     },
     methods: {
       goWatchDetail: function (id) {

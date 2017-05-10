@@ -1,9 +1,3 @@
-<!--/*
- * @Author: ReedSun
- * @Date: 2017-04-22 23:59:11
- * @Last Modified by:ReedSun
- * @Last Modified time: 2017-04-25 22:34:23
- */-->
 <template>
   <div class="movie-detail-message">
     <div class="movie-intr-wrapper">

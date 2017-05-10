@@ -3,12 +3,12 @@
     <p class="movie-detail-people-title">影人</p>
     <div class="movie-detail-people-main">
       <ul class="people-list">
-        <li class="people-item" v-for ="item in directors">
+        <li class="people-item" v-for ="item in directors" @click="goPeoplePage(item.id)">
           <img :src="item.avatars.small">
           <p class="people-name">{{item.name}}</p>
           <p class="people-label">导演</p>
         </li>
-        <li class="people-item" v-for="item in casts">
+        <li class="people-item" v-for="item in casts" @click="goPeoplePage(item.id)">
           <img :src="item.avatars.small">
           <p class="people-name">{{item.name}}</p>
         </li>
@@ -27,6 +27,11 @@
       casts: {
         type: Array,
         require: false
+      }
+    },
+    methods: {
+      goPeoplePage (id) {
+        this.$router.push('/people/' + id)
       }
     }
   }

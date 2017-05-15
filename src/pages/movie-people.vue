@@ -1,6 +1,6 @@
 <template>
   <div class="movie-people">
-    <mt-header class="header" title="电影" fixed>
+    <mt-header class="header" title="影人" fixed>
       <div @click="$router.go(-1)" slot="left">
         <mt-button icon="back">返回</mt-button>
       </div>

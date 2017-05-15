@@ -1,5 +1,5 @@
 <template>
-  <div class="movie-detail-header">
+  <div class="info-pic">
     <div class="header">
       <img class="header-pic" :src="this.img">
     </div>
@@ -7,7 +7,7 @@
 </template>
 <script>
   export default {
-    name: 'movie-detail-header',
+    name: 'info-pic',
     props: {
       img: {
         type: String,

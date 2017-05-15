@@ -5,15 +5,16 @@
         <mt-button icon="back">返回</mt-button>
       </div>
     </mt-header>
-    <movie-detail-header :img="peopleInfo.avatars.large"></movie-detail-header>
+    <info-pic :img="peopleInfo.avatars.large"></info-pic>
   </div>
 </template>
 
 <script>
   import { Header, Button, Indicator, MessageBox } from 'mint-ui'
   import axios from 'axios'
-  import movieDetailHeader from '@/components/movie-detail-header'
+  import infoPic from '@/components/info-pic'
   export default {
+    name: 'movie-people',
     data () {
       return {
         peopleInfo: {
@@ -26,7 +27,7 @@
     components: {
       mtHeader: Header,
       mtButton: Button,
-      movieDetailHeader
+      infoPic
     },
     created () {
       this.getPeopleInfo()

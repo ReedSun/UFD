@@ -13,7 +13,7 @@
 </template>
 <script>
   import axios from 'axios'
-  import movieDetailHeader from '@/components/movie-detail-header'
+  import infoPic from '@/components/info-pic'
   import movieDetailMessage from '@/components/movie-detail-message'
   import movieDetailSummary from '@/components/movie-detail-summary'
   import movieDetailPeople from '@/components/movie-detail-people'
@@ -21,7 +21,7 @@
   export default {
     name: 'movie-detail',
     components: {
-      movieDetailHeader,
+      infoPic,
       movieDetailMessage,
       movieDetailSummary,
       movieDetailPeople,

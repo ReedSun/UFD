@@ -25,6 +25,5 @@
   }
   .header-pic {
     height: 350px;
-    width: 230px;
   }
 </style>

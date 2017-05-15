@@ -6,6 +6,7 @@
       </div>
     </mt-header>
     <info-pic :img="peopleInfo.avatars.large"></info-pic>
+    <movie-people-message :name="peopleInfo.name" :name_en="peopleInfo.name_en" :gender="peopleInfo.gender" :born_place="peopleInfo.born_place" :aka="peopleInfo.aka" :aka_en="peopleInfo.aka_en"></movie-people-message>
   </div>
 </template>
 
@@ -13,6 +14,7 @@
   import { Header, Button, Indicator, MessageBox } from 'mint-ui'
   import axios from 'axios'
   import infoPic from '@/components/info-pic'
+  import moviePeopleMessage from '@/components/movie-people-message'
   export default {
     name: 'movie-people',
     data () {
@@ -27,7 +29,8 @@
     components: {
       mtHeader: Header,
       mtButton: Button,
-      infoPic
+      infoPic,
+      moviePeopleMessage
     },
     created () {
       this.getPeopleInfo()

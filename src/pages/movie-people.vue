@@ -16,7 +16,11 @@
   export default {
     data () {
       return {
-        peopleInfo: {}
+        peopleInfo: {
+          avatars: {
+            large: 'http://i2.muimg.com/567571/dfc81d4142229b4a.png'
+          }
+        }
       }
     },
     components: {

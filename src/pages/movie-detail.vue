@@ -5,7 +5,7 @@
         <mt-button icon="back">返回</mt-button>
       </div>
     </mt-header>
-    <movie-detail-header :img="data.images.large"></movie-detail-header>
+    <info-pic :img="data.images.large"></info-pic>
     <movie-detail-message :title="data.title" :year="data.year" :originalTitle="data.original_title" :genres="data.genres" :aka="data.aka" :countries="data.countries" :rate="data.rating.average" :ratePeople="data.ratings_count"></movie-detail-message>
     <movie-detail-summary :summary="movieSummaryArr"></movie-detail-summary>
     <movie-detail-people :directors="data.directors" :casts="data.casts"></movie-detail-people>

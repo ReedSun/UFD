@@ -7,6 +7,7 @@
     </mt-header>
     <info-pic :img="peopleInfo.avatars.large"></info-pic>
     <movie-people-message :name="peopleInfo.name" :name_en="peopleInfo.name_en" :gender="peopleInfo.gender" :born_place="peopleInfo.born_place" :aka="peopleInfo.aka" :aka_en="peopleInfo.aka_en"></movie-people-message>
+    <movie-people-work :work="peopleInfo.works"></movie-people-work>
   </div>
 </template>
 
@@ -15,6 +16,7 @@
   import axios from 'axios'
   import infoPic from '@/components/info-pic'
   import moviePeopleMessage from '@/components/movie-people-message'
+  import moviePeopleWork from '@/components/movie-people-work'
   export default {
     name: 'movie-people',
     data () {
@@ -30,7 +32,8 @@
       mtHeader: Header,
       mtButton: Button,
       infoPic,
-      moviePeopleMessage
+      moviePeopleMessage,
+      moviePeopleWork
     },
     created () {
       this.getPeopleInfo()

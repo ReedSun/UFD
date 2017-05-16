@@ -4,12 +4,12 @@
     <div class="movie-detail-people-main">
       <ul class="people-list">
         <li class="people-item" v-for ="item in directors" @click="goPeoplePage(item.id)">
-          <img :src="item.avatars.small">
+          <img :src="item.avatars?item.avatars.small:'http://img3.doubanio.com/f/movie/ca527386eb8c4e325611e22dfcb04cc116d6b423/pics/movie/celebrity-default-small.png'">
           <p class="people-name">{{item.name}}</p>
           <p class="people-label">导演</p>
         </li>
         <li class="people-item" v-for="item in casts" @click="goPeoplePage(item.id)">
-          <img :src="item.avatars.small">
+          <img :src="item.avatars?item.avatars.small:'http://img3.doubanio.com/f/movie/ca527386eb8c4e325611e22dfcb04cc116d6b423/pics/movie/celebrity-default-small.png'">
           <p class="people-name">{{item.name}}</p>
         </li>
       </ul>
@@ -58,6 +58,9 @@
     list-style: none;
     flex-shrink: 0;
     text-align: center;
+  }
+  .people-item>img {
+    height: 100px;
   }
   .people-name {
     font-size: 14px;

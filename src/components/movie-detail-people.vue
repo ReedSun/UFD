@@ -17,6 +17,7 @@
   </div>
 </template>
 <script>
+  import { MessageBox } from 'mint-ui'
   export default {
     name: 'movie-detail-people',
     props: {
@@ -31,7 +32,11 @@
     },
     methods: {
       goPeoplePage (id) {
-        this.$router.push('/people/' + id)
+        if (id) {
+          this.$router.push('/people/' + id)
+        } else {
+          MessageBox('提示', '暂无此影人信息')
+        }
       }
     }
   }
